@@ -41,6 +41,9 @@ const App = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
+      <View>
+        <Text style={styles.title}>KingNNT</Text>
+      </View>
     </SafeAreaView>
   );
 };
