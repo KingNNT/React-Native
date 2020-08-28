@@ -1,18 +1,48 @@
 import React from 'react';
-import { StackNavigator } from '@react-navigation/stack';
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  Text,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 
-import MenuScreen from './Screens/MenuScreen/MenuScreen';
-import DetailMenuScreen from './Screens/DetailMenuScreen/DetailMenuScreen';
+const DATA = require('./Data/Data.js');
+const styles = require('./Styles/Styles.App.js');
 
-const Stack = StackNavigator();
+const Item = ({item}) => (
+  <TouchableOpacity onPress={() => Alert.alert(item.title)}>
+    <View style={styles.item}>
+      <View>
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: item.urlimage,
+          }}
+        />
+      </View>
 
-const App: () => React$Node = () => {
+      <View style={styles.ranger}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.subtitle}>{item.subtitle}</Text>
+      </View>
+    </View>
+  </TouchableOpacity>
+);
+
+const App = () => {
+  const renderItem = ({item}) => <Item item={item} />;
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="MenuScreen" component={MenuScreen} />
-      <Stack.Screen name="DetailMenuScreen" component={DetailMenuScreen} />
-    </Stack.Navigator>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
+    </SafeAreaView>
   );
-}
+};
 
 export default App;

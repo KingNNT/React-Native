@@ -20,3 +20,5 @@ const DATA = [
       'https://cunghocvui.com/storage/caches/image_show_small/uploads/university/ce5e4430e08000ff5c6ca828b4df3ffc.jpg',
   },
 ];
+
+export default DATA;
