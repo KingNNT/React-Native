@@ -15,8 +15,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import AppData from './Data';
+import DetailScreen from './DetailScreen';
 
 const DATA = AppData;
+const DetailScr = DetailScreen;
 
 const Item = ({item, onPress}) => {
   return (
@@ -40,9 +42,9 @@ const Item = ({item, onPress}) => {
   );
 };
 
-const MenuScreen = () => {
+const MenuScreen = (props) => {
   const renderItem = ({item}) => (
-    <Item item={item} onPress={() => props.navigation.navigate('DetailScr')} />
+    <Item item={item} onPress={() => props.navigation.navigate('Detail')} />
   );
 
   return (
