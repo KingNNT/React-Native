@@ -41,18 +41,16 @@ const Item = ({item, onPress}) => {
 };
 
 const MenuScreen = () => {
-  const renderItem = ({item}) => {
-    <Item item={item} onPress={() => props.navigation.navigate('DetailScr')} />;
-  };
+  const renderItem = ({item}) => (
+    <Item item={item} onPress={() => props.navigation.navigate('DetailScr')} />
+  );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </SafeAreaView>
+    <FlatList
+      data={DATA}
+      renderItem={renderItem}
+      keyExtractor={(item) => item.id}
+    />
   );
 };
 
