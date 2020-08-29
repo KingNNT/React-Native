@@ -10,29 +10,8 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-
-const DATA = [
-  {
-    id: '1',
-    title: 'Thể thao',
-    subtitle: 'Tin tức về thể thao...',
-    urlimage:
-      'https://i1-vnexpress.vnecdn.net/2019/03/02/bai-toan-3768-1551057063-6906-1551496131.png?w=680&h=0&q=100&dpr=2&fit=crop&s=RB0E7t9Wamfp3EmE4PDPeQ',
-  },
-  {
-    id: '2',
-    title: 'Văn hóa',
-    subtitle: 'Tin tức về văn hóa...',
-    urlimage: 'https://www.goldlogo.xyz/images/LogoBoVanHoaTTVN.jpg',
-  },
-  {
-    id: '3',
-    title: 'Đời sống',
-    subtitle: 'Tin tức về đời sống...',
-    urlimage:
-      'https://cunghocvui.com/storage/caches/image_show_small/uploads/university/ce5e4430e08000ff5c6ca828b4df3ffc.jpg',
-  },
-];
+import AppData from './app/Data';
+const DATA = AppData;
 
 const Item = ({item}) => (
   <TouchableOpacity onPress={() => Alert.alert(item.title)}>
@@ -46,7 +25,6 @@ const Item = ({item}) => (
         />
       </View>
 
-      {/*đây là cột thứ 2*/}
       <View style={styles.ranger}>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.subtitle}>{item.subtitle}</Text>
@@ -75,24 +53,24 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
+    backgroundColor: '#d1e0de',
+    padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
     flexDirection: 'row',
   },
   title: {
-    fontSize: 32,
+    fontSize: 16
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 12,
   },
   tinyLogo: {
-    height: 48,
-    width: 48,
+    height: 90,
+    width: 90,
   },
   ranger: {
-    padding: 10,
+    padding: 5,
   },
 });
 
