@@ -18,7 +18,7 @@ import AppData from './Data';
 
 const DATA = AppData;
 
-const Item = ({item}, {onPress}) => {
+const Item = ({item, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.item}>
@@ -42,10 +42,7 @@ const Item = ({item}, {onPress}) => {
 
 const MenuScreen = () => {
   const renderItem = ({item}) => {
-    <Item
-      item={item}
-      onPress={() => this.props.navigation.navigate('DetailScr')}
-    />;
+    <Item item={item} onPress={() => props.navigation.navigate('DetailScr')} />;
   };
 
   return (

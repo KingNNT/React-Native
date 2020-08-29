@@ -13,11 +13,7 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Menu Screen">
-        <Stack.Screen
-          name="Menu Screen"
-          component={MenuScr}
-          // navigation="DetailScreen"
-        />
+        <Stack.Screen name="Menu Screen" component={MenuScr} />
         <Stack.Screen name="Detail" component={DetailScr} />
       </Stack.Navigator>
     </NavigationContainer>
