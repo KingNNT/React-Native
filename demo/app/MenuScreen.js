@@ -11,31 +11,42 @@ import {
   Alert,
 } from 'react-native';
 
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import AppData from './Data';
+
 const DATA = AppData;
 
-const Item = ({item}) => (
-  <TouchableOpacity onPress={() => Alert.alert(item.title)}>
-    <View style={styles.item}>
-      <View>
-        <Image
-          style={styles.tinyLogo}
-          source={{
-            uri: item.urlimage,
-          }}
-        />
-      </View>
+const Item = ({item}, {onPress}) => {
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.item}>
+        <View>
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: item.urlimage,
+            }}
+          />
+        </View>
 
-      <View style={styles.ranger}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.subtitle}>{item.subtitle}</Text>
+        <View style={styles.ranger}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.subtitle}>{item.subtitle}</Text>
+        </View>
       </View>
-    </View>
-  </TouchableOpacity>
-);
+    </TouchableOpacity>
+  );
+};
 
 const MenuScreen = () => {
-  const renderItem = ({item}) => <Item item={item} />;
+  const renderItem = ({item}) => {
+    <Item
+      item={item}
+      onPress={() => this.props.navigation.navigate('DetailScr')}
+    />;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
