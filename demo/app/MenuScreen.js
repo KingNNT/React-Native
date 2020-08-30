@@ -24,7 +24,7 @@ const Item = ({item, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.item}>
-        <View>
+        <View style={styles.logo}>
           <Image
             style={styles.tinyLogo}
             source={{
@@ -44,7 +44,10 @@ const Item = ({item, onPress}) => {
 
 const MenuScreen = (props) => {
   const renderItem = ({item}) => (
-    <Item item={item} onPress={() => props.navigation.navigate('Detail')} />
+    <Item
+      item={item}
+      onPress={() => props.navigation.navigate('Detail', item)}
+    />
   );
 
   return (
@@ -67,19 +70,28 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 16,
+    flexWrap: 'nowrap',
+    width: 300,
+    textAlign: 'justify',
   },
   subtitle: {
     fontSize: 12,
+    flexWrap: 'nowrap',
+    width: 300,
+    textAlign: 'justify',
   },
   tinyLogo: {
-    height: 90,
-    width: 90,
+    height: 48,
+    width: 48,
   },
   ranger: {
     padding: 5,
+    justifyContent: 'flex-end',
   },
 });
 

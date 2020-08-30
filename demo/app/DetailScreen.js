@@ -1,25 +1,39 @@
 import React from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   View,
-  FlatList,
   StyleSheet,
   Text,
   StatusBar,
   Image,
-  TouchableOpacity,
-  Alert,
 } from 'react-native';
 
 import AppData from './Data';
 const DATA = AppData;
 
-const DetailScreen = () => {
+const DetailScreen = ({item}) => {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.a}>
-        <Text style={styles.a}>Test</Text>
+      <View>
+        <Text style={styles.title}>{DATA[0].title}</Text>
+      </View>
+      <View>
+        <Text style={styles.paragraph}>{DATA[0].data[0].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[1].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[2].value}</Text>
+      </View>
+      <View style={styles.containerImage}>
+        <Image
+          style={styles.image}
+          source={{
+            uri: DATA[0].urlimage,
+          }}
+        />
+      </View>
+      <View>
+        <Text style={styles.paragraph}>{DATA[0].data[4].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[5].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[6].value}</Text>
       </View>
     </ScrollView>
   );
@@ -30,25 +44,27 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
   },
-  item: {
-    backgroundColor: '#d1e0de',
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    flexDirection: 'row',
-  },
   title: {
-    fontSize: 16,
+    marginHorizontal: 10,
+    fontSize: 20,
+    textAlign: 'center',
+    color: '#9e4e3e',
+    textShadowColor: '#474241',
   },
-  subtitle: {
-    fontSize: 12,
+  paragraph: {
+    marginVertical: 10,
+    marginHorizontal: 5,
+    fontSize: 14,
+    textAlign: 'justify',
+    color: '#000000',
   },
-  tinyLogo: {
-    height: 90,
-    width: 90,
+  containerImage: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  ranger: {
-    padding: 5,
+  image: {
+    width: 300,
+    height: 150,
   },
 });
 
