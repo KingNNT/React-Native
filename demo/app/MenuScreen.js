@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  SafeAreaView,
   View,
   FlatList,
   StyleSheet,
@@ -8,17 +7,11 @@ import {
   StatusBar,
   Image,
   TouchableOpacity,
-  Alert,
 } from 'react-native';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-
 import AppData from './Data';
-import DetailScreen from './DetailScreen';
 
 const DATA = AppData;
-const DetailScr = DetailScreen;
 
 const Item = ({item, onPress}) => {
   return (
