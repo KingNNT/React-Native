@@ -19,8 +19,8 @@ const DetailScreen = ({item}) => {
       </View>
       <View>
         <Text style={styles.paragraph}>{DATA[0].data[0].content[0].value}</Text>
-        <Text style={styles.paragraph}>{DATA[0].data[1].content[1].value}</Text>
-        <Text style={styles.paragraph}>{DATA[0].data[2].content[2].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[0].content[1].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[0].content[2].value}</Text>
       </View>
       <View style={styles.containerImage}>
         <Image
@@ -32,8 +32,8 @@ const DetailScreen = ({item}) => {
       </View>
       <View>
         <Text style={styles.paragraph}>{DATA[0].data[0].content[3].value}</Text>
-        <Text style={styles.paragraph}>{DATA[0].data[1].content[4].value}</Text>
-        <Text style={styles.paragraph}>{DATA[0].data[2].content[5].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[0].content[4].value}</Text>
+        <Text style={styles.paragraph}>{DATA[0].data[0].content[5].value}</Text>
       </View>
     </ScrollView>
   );
